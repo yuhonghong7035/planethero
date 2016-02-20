@@ -10,6 +10,7 @@
   "homepage": "https://github.com/hari4you/planethero#readme",
   "dependencies": {
     "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
     "classie": "^1.0.0",
     "countup": "^1.6.1",
     "font-awesome": "^4.5.0",
