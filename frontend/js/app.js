@@ -16,7 +16,7 @@ app.run(function($rootScope) {
         $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
     }
 });
- 
+
 //Define Routing for app
 //Uri /AddNewOrder -> template add_order.html and Controller AddOrderController
 //Uri /ShowOrders -> template show_orders.html and Controller AddOrderController
@@ -39,19 +39,34 @@ app.config(['$routeProvider',
         templateUrl: 'templates/badges.html',
         controller: 'BadgesController'
       }).
+      when('/calendar', {
+        templateUrl: 'templates/calendar.html',
+        controller: 'calendarController'
+      }).
+      when('/profile', {
+        templateUrl: 'templates/profile.html',
+        controller: 'profileController'
+      }).
       otherwise({
         redirectTo: '/feed'
       });
 }]);
- 
+
+app.controller('calendarController', function($scope) {
+
+});
+
+app.controller('profileController', function($scope) {
+
+});
 
 app.controller('AddActivityController', function($scope,utilityFun, $rootScope) {
     $rootScope.removeactive();
     $("#add").addClass ("active");
     //utilityFun.makeActive("add");
-     
+
 });
-  
+
 app.controller('ShowMetrics', function($scope,utilityFun, $rootScope) {
     $scope.message = 'This is Show ShowMetrics screen';
     $rootScope.removeactive();
@@ -260,15 +275,15 @@ app.controller('ShowMetrics', function($scope,utilityFun, $rootScope) {
             }
         }
     });
- 
+
 });
- 
+
 app.controller('FeedController', function($scope,utilityFun, $rootScope) {
     $rootScope.removeactive();
     //$(".cd-stretchy-nav a").removeClass("active");
     $("#feed").addClass ("active");
     //utilityFun.makeActive("feed");
- 
+
 });
 
 app.controller('BadgesController', function($scope, $rootScope) {
@@ -276,6 +291,6 @@ app.controller('BadgesController', function($scope, $rootScope) {
     $("#badges").addClass ("active");
     //utilityFun.makeActive("badges");
 
- 
+
 });
 
