@@ -3,59 +3,95 @@
   <head>
     <title ng-bind="'Planet Hero &dash; ' + title">myApp</title>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/feed.css"> 
-	<link rel="stylesheet" href="css/nav.css"> 
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<!-- <script type="text/javascript" src="js/countUp.js"></script> -->
-
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/nav.css">
   </head>
- 
-  <body >
+
+  <body>
+    <!----------------------->
+    <!--    Header area    -->
+    <!----------------------->
   	<nav class="cd-stretchy-nav">
-		<a class="cd-nav-trigger" href="#0">
-			<span aria-hidden="true"></span>
-		</a>
-	 
-		<ul>
-			<li><a href="#addActivity" id="add"><span align="center"><div class="nav-label">Home</div></span><i class="fa fa-home"></i></a></li>
-			<li><a href="#feed" id="feed"><span align="center"><div class="nav-label">Feed</div></span><i class="fa fa-list"></i></a></li>
-			<li><a href="#badges" id="badges"><span align="center"><div class="nav-label">Badges</div></span><i class="fa fa-trophy"></i></a></li>
-			<li><a href="#metrics" id="metrics"><span align="center"><div class="nav-label">Metrics</div></span><i class="fa fa-bar-chart"></i></a></li>
-			<!-- other list items here -->
-		</ul>
-	 
-		<span aria-hidden="true" class="stretchy-nav-bg"></span>
-	</nav>
- 	<header id="feed-header">
-		<div class="header_container">
-			<h1>Everything, Everyone, Everywhere</h1>
-			<div class="header_counts"><h2 id="activities_countup"></h2> Activities</div>
-			<div class="header_counts"><h2 id="users_countup"></h2> Users</div>
-			<div class="header_counts">From <h2 id="countries_countup"></h2> countries around the world</div>
-		</div>
-	</header>
+      <a class="cd-nav-trigger" href="#0">
+        <span aria-hidden="true"></span>
+      </a>
+      <ul>
+        <li>
+          <a href="#addActivity" id="add">
+            <span align="center"><div class="nav-label">Home</div></span>
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#feed" id="feed">
+            <span align="center"><div class="nav-label">Feed</div></span>
+            <i class="fa fa-list"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#badges" id="badges">
+            <span align="center"><div class="nav-label">Badges</div></span>
+            <i class="fa fa-trophy"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#metrics" id="metrics">
+            <span align="center"><div class="nav-label">Metrics</div></span>
+            <i class="fa fa-bar-chart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#calendar" id="calendar">
+            <span align="center"><div class="nav-label">Calendar</div></span>
+            <i class="fa fa-calendar"></i>
+          </a>
+        </li>
+      </ul>
+		  <span aria-hidden="true" class="stretchy-nav-bg"></span>
+	  </nav>
+
+    <!----------------------->
+    <!--    Header area    -->
+    <!----------------------->
+    <header id="feed-header">
+      <div class="header_container">
+        <h1>Everything, Everyone, Everywhere</h1>
+        <div class="header_counts"><h2 id="activities_countup"></h2> Activities</div>
+        <div class="header_counts"><h2 id="users_countup"></h2> Users</div>
+        <div class="header_counts">From <h2 id="countries_countup"></h2> countries around the world</div>
+      </div>
+    </header>
+
+    <!------------------------->
+    <!--  Angular view area  -->
+    <!------------------------->
     <div ng-view></div>
+
+    <!--------------------------->
+    <!--    Script loadings    -->
+    <!--------------------------->
+    <script src="js/modernizr.js"></script>
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/angular.min.js"></script>
-    <!-- <script src="js/highcharts.js"></script>
-    <script src="js/drilldown.js"></script> -->
+    <!-- <script src="js/highcharts.js"></script> -->
+    <!-- <script src="js/drilldown.js"></script>  -->
     <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-	<script src="https://code.highcharts.com/maps/modules/data.js"></script>
-	<script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
-	<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
-	<script type="text/javascript" src="js/countUp.js"></script>
-	<script type="text/javascript" src="js/global.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-	<script src="js/modernizr.custom.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
+    <script type="text/javascript" src="js/countUp.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="js/modernizr.custom.js"></script>
 
-	<!-- <script type="text/javascript" src="js/controller.js"></script> -->
+    <!-- <script type="text/javascript" src="js/controller.js"></script> -->
   </body>
 </html>
 
