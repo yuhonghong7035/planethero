@@ -20,6 +20,10 @@ app.config(['$routeProvider',
         templateUrl: 'templates/timeline.html',
         controller: 'FeedController'
       }).
+      when('/badges', {
+        templateUrl: 'templates/badges.html',
+        controller: 'BadgesController'
+      }).
       otherwise({
         redirectTo: '/feed'
       });
@@ -44,3 +48,10 @@ app.controller('FeedController', function($scope) {
     $("#feed").addClass ("active");
  
 });
+
+app.controller('BadgesController', function($scope) {
+ 
+    $("#badges").addClass ("active");
+ 
+});
+
