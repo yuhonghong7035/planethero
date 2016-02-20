@@ -8,7 +8,7 @@
   top: 14px;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Stretchy Nav style - common to:
  - basic navigation
@@ -18,7 +18,7 @@ Stretchy Nav style - common to:
 -------------------------------- */
 .cd-stretchy-nav {
   position: fixed;
-  z-index: 2;
+  z-index: 100;
   top: 40px;
   right: 5%;
 }
@@ -302,7 +302,7 @@ Stretchy Nav style - common to:
 }
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 main content basic style
 
@@ -315,7 +315,7 @@ main content basic style
   background-color: #003c5d;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 keyframes
 
