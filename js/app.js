@@ -8,16 +8,20 @@ var app = angular.module('planethero', []);
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/AddActivity', {
+      when('/addActivity', {
         templateUrl: 'templates/add_activity.html',
         controller: 'AddOrderController'
-    }).
-      when('/ShowActivity', {
+      }).
+      when('/showActivity', {
         templateUrl: 'templates/timeline.html',
         controller: 'ShowOrdersController'
       }).
+      when('/feed', {
+        templateUrl: 'templates/timeline.html',
+        controller: 'FeedController'
+      }).
       otherwise({
-        redirectTo: '/ShowActivity'
+        redirectTo: '/feed'
       });
 }]);
  
@@ -34,4 +38,8 @@ app.controller('ShowOrdersController', function($scope) {
  
 });
  
-
+app.controller('FeedController', function($scope) {
+ 
+    console.log ('feed');
+ 
+});
