@@ -1,7 +1,8 @@
-<!doctype html>
-<html lang="en" class="no-js" ng-app="planethero">
-<head>
-	<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Planet Hero</title>
+    <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -11,34 +12,26 @@
 	<link rel="stylesheet" href="css/feed.css"> 
 	<link rel="stylesheet" href="css/nav.css"> 
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<script type="text/javascript" src="js/countUp.js"></script>
+	<!-- <script type="text/javascript" src="js/countUp.js"></script> -->
 
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/controller.js"></script>
-  	
-	<title>Planet Hero - Fees</title>
-</head>
-
-
-	<nav class="cd-stretchy-nav">
+  </head>
+ 
+  <body ng-app="sampleApp">
+  	<nav class="cd-stretchy-nav">
 		<a class="cd-nav-trigger" href="#0">
 			Menu
 			<span aria-hidden="true"></span>
 		</a>
 	 
 		<ul>
-			<li><a href="#0" class="active"><span>Home</span><i class="fa fa-home"></i></a></li>
-			<li><a href="#0"><span>Portfolio</span></a></li>
+			<li><a href="#AddActivity" ><span>Home</span><i class="fa fa-home"></i></a></li>
+			<li><a href="#ShowActivity"><span>Portfolio</span><i class="fa fa-list"></i></a></li>
 			<!-- other list items here -->
 		</ul>
 	 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
 	</nav>
-<body ng-controller="feedCtrl">
-
-	<header id="feed-header">
+ 	<header id="feed-header">
 		<div class="header_container">
 			<h1>Everything, Everyone, Everywhere</h1>
 			<div class="header_counts"><h2 id="activities_countup"></h2> Activities</div>
@@ -46,80 +39,17 @@
 			<div class="header_counts">From <h2 id="countries_countup"></h2> countries around the world</div>
 		</div>
 	</header>
+    <div class="col-md-9">
+            <div ng-view></div>
+        </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
+	<script type="text/javascript" src="js/countUp.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 
-	<section id="cd-timeline" class="cd-container">
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-green">
-				<img src="img/nature-people.png" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>A new member just joined</h2>
-				<p class="time_place">1 hour ago &middot; Hong Kong</p>
-				<p>Hi I'm from Hong Kong</p>
-				<a href="#0" class="cd-read-more">Share</a>
-				<span class="cd-date">Jan 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-red">
-				<img src="img/map-marker-radius.png">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Planet Hero's activity</h2>
-				<p class="time_place">1 hour ago &middot; Hong Kong</p>
-				<p>Nice activity in Hong Kong</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-yellow">
-				<img src="img/flag-outline-variant.png">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Upcoming activity in Hong Kong</h2>
-				<p class="time_place">1 hour ago &middot; Hong Kong</p>
-				<p>Trees planting at Victoria Park tomorrow 20/2 afternoon</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-green">
-				<img src="img/earth.png">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>First setup</h2>
-				<p>This marks the first setup of Planet Hero</p>
-				<span class="cd-date">Feb 19</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-	</section> <!-- cd-timeline -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/feed.js"></script> <!-- Resource jQuery -->
-<script src="js/nav.js"></script> <!-- Resource jQuery -->
-<script type="text/javascript">
-var options = {
-  useEasing : true, 
-  useGrouping : true, 
-  separator : ',', 
-  decimal : '.', 
-  prefix : '', 
-  suffix : '' 
-};
-var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
-var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
-var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
-users_countup.start();
-activities_countup.start();
-countries_countup.start();
-</script>
-</body>
+	<!-- <script type="text/javascript" src="js/controller.js"></script> -->
+  </body>
 </html>
+
