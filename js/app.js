@@ -1,11 +1,11 @@
 //Define an angular module for our app
-var sampleApp = angular.module('sampleApp', []);
+var app = angular.module('planethero', []);
 
  
 //Define Routing for app
 //Uri /AddNewOrder -> template add_order.html and Controller AddOrderController
 //Uri /ShowOrders -> template show_orders.html and Controller AddOrderController
-sampleApp.config(['$routeProvider',
+app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/AddActivity', {
@@ -22,13 +22,13 @@ sampleApp.config(['$routeProvider',
 }]);
  
 
-sampleApp.controller('AddOrderController', function($scope) {
+app.controller('AddOrderController', function($scope) {
      
     $scope.message = 'This is Add new order screen';
      
 });
   
-sampleApp.controller('ShowOrdersController', function($scope) {
+app.controller('ShowOrdersController', function($scope) {
  
     $scope.message = 'This is Show orders screen';
  
