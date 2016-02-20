@@ -1,0 +1,49 @@
+body {
+	background: url('../img/background.jpg') no-repeat center center;
+	background-size: cover;
+
+}
+
+#landing_header {
+	color:white;
+	top: 50%;
+    position: relative;
+    height: 500px;
+    margin-top: -293px;
+}
+
+#landing_header h1{
+	font-size:4.5em;
+}
+
+#landing_header h2{
+	font-size:2em;
+}
+
+div.overlay {
+    opacity: .1;
+    background-color: black;
+    position: absolute;
+    left: 0; top: 0; height: 100%; width: 100%;
+}
+
+#landing_header_info {
+	margin-top:4em;
+	margin-bottom:1em;
+}
+
+.become-btn {
+	transition: all .3s linear;
+	background:#8DBF29;
+	width:300px;
+	color: white;
+	line-height:100px;
+	vertical-align: middle;
+	vertical-align: middle;
+	height: 100px;
+	padding: 20px 60px;
+}
+
+.become-btn:hover {
+	background: #9ED237;
+}
