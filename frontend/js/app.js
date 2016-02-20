@@ -47,10 +47,18 @@ app.config(['$routeProvider',
         templateUrl: 'templates/profile.html',
         controller: 'profileController'
       }).
+      when('/enter', {
+        templateUrl: 'templates/enter.html',
+        controller: 'enteranceController'
+      }).
       otherwise({
         redirectTo: '/feed'
       });
 }]);
+
+app.controller('entranceController', function($scope) {
+
+});
 
 app.controller('calendarController', function($scope) {
 
