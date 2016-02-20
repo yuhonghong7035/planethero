@@ -89,3 +89,11 @@ ol, ul {
   display:inline-block;
   margin: 0 1em;
 }
+
+/* metrics */
+
+section h1 {
+  text-align: center;
+}
+
+/* end of metrics */
