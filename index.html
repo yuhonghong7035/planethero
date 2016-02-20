@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="planethero">
   <head>
-    <title>Planet Hero</title>
+    <title ng-bind="'Planet Hero &dash; ' + title">myApp</title>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +16,7 @@
 
   </head>
  
-  <body ng-app="planethero">
+  <body >
   	<nav class="cd-stretchy-nav">
 		<a class="cd-nav-trigger" href="#0">
 			<span aria-hidden="true"></span>
@@ -26,7 +26,7 @@
 			<li><a href="#addActivity" id="add"><span>Home</span><i class="fa fa-home"></i></a></li>
 			<li><a href="#feed" id="feed"><span>Feed</span><i class="fa fa-list"></i></a></li>
 			<li><a href="#badges" id="badges"><span>Badges</span><i class="fa fa-list"></i></a></li>
-			<li><a href="#metrics" id="metrics"><span>Metrics</span><i class="fa fa-bar-chart"></i></a></li>
+			<li><a href="#metrics" id="metrics" class="menucolors"><span>Metrics</span><i class="fa fa-bar-chart"></i></a></li>
 			<!-- other list items here -->
 		</ul>
 	 
