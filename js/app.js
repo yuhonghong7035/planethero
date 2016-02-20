@@ -41,5 +41,6 @@ app.controller('ShowOrdersController', function($scope) {
 app.controller('FeedController', function($scope) {
  
     console.log ('feed');
+    $("#feed").addClass ("active");
  
 });

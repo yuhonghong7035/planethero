@@ -24,8 +24,8 @@
 		</a>
 	 
 		<ul>
-			<li><a href="#addActivity" ><span>Home</span><i class="fa fa-home"></i></a></li>
-			<li><a href="#feed"><span>Feed</span><i class="fa fa-list"></i></a></li>
+			<li><a href="#addActivity" id="addActivity"><span>Home</span><i class="fa fa-home"></i></a></li>
+			<li><a href="#feed" id="feed"><span>Feed</span><i class="fa fa-list"></i></a></li>
 			<!-- other list items here -->
 		</ul>
 	 
@@ -39,9 +39,7 @@
 			<div class="header_counts">From <h2 id="countries_countup"></h2> countries around the world</div>
 		</div>
 	</header>
-    <div class="col-md-9">
-            <div ng-view></div>
-        </div>
+    <div ng-view></div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
