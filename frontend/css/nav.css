@@ -300,6 +300,12 @@ Stretchy Nav style - common to:
   -moz-animation-delay: 0.25s;
   animation-delay: 0.25s;
 }
+.cd-stretchy-nav.nav-is-visible ul li:nth-of-type(6) a i,
+.cd-stretchy-nav.nav-is-visible ul li:nth-of-type(6) span {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
 
 
 /* --------------------------------
