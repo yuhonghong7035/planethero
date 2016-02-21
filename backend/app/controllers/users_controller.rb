@@ -5,6 +5,12 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if current_user
+      logger.debug "Current user present"
+      logger.debug current_user.inspect
+    else
+      logger.debug "No current user"
+    end
 
     render json: @users
   end
