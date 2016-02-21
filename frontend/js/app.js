@@ -69,6 +69,10 @@
           templateUrl: 'templates/tasks.html',
           controller: 'TasksController'
         }).
+        when('/tasks/new', {
+          templateUrl: 'templates/add_task.html',
+          controller: 'addTaskController'
+        }).
         when('/metrics', {
           templateUrl: 'templates/metrics.html',
           controller: 'metricsController'
