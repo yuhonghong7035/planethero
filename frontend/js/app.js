@@ -57,16 +57,17 @@ app.config(['$routeProvider',
       });
 }]);
 
-app.controller('entranceController', function($scope) {
-
+app.controller('entranceController', function($scope, $rootScope) {
 });
 
-app.controller('calendarController', function($scope) {
-
+app.controller('calendarController', function($scope, $rootScope) {
+    $rootScope.removeactive();
+    $("#calendar").addClass ("active");
 });
 
-app.controller('profileController', function($scope) {
-
+app.controller('profileController', function($scope, $rootScope) {
+    $rootScope.removeactive();
+    $("#profile").addClass ("active");
 });
 
 app.controller('TasksController', function($scope,utilityFun, $rootScope, $http) {
