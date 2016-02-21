@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :memberships, except: [:new, :edit]
+  resources :tasks, except: [:new, :edit]
   mount Knock::Engine => "/knock"
   resources :teams, except: [:new, :edit]
+  resources :enrollments, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :items, except: [:new, :edit]
   resources :todos, except: [:new, :edit]
