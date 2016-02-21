@@ -1,5 +1,5 @@
 //Define an angular module for our app
-var app = angular.module('planethero', ["ngRoute"]);
+var app = angular.module('planethero', ["ngRoute", "ngMaterial", 'ngMdIcons']);
 
 app.factory('utilityFun', function() {
   return {
@@ -15,6 +15,7 @@ app.run(function($rootScope) {
     $rootScope.removeactive = function() {
         $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
     }
+    $rootScope.url='http://private-6558c-planetheroapi.apiary-mock.com/';
 });
 
 //Define Routing for app
@@ -23,9 +24,9 @@ app.run(function($rootScope) {
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/addActivity', {
-        templateUrl: 'templates/add_activity.html',
-        controller: 'AddActivityController'
+      when('/tasks', {
+        templateUrl: 'templates/tasks.html',
+        controller: 'TasksController'
       }).
       when('/metrics', {
         templateUrl: 'templates/metrics.html',
@@ -68,10 +69,20 @@ app.controller('profileController', function($scope) {
 
 });
 
-app.controller('AddActivityController', function($scope,utilityFun, $rootScope) {
+app.controller('TasksController', function($scope,utilityFun, $rootScope, $http) {
     $rootScope.removeactive();
-    $("#add").addClass ("active");
+    $("#tasks").addClass ("active");
     //utilityFun.makeActive("add");
+    $scope.tasks = {};
+    $http({
+      method: 'GET',
+      url: $rootScope.url+'tasks'
+    }).then(function successCallback(response) {
+        console.log (response);
+        $scope.tasks = response.data;
+      }, function errorCallback(response) {
+        console.log (response);
+      });
 
 });
 

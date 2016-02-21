@@ -1,0 +1,34 @@
+<h2>Tasks</h2>
+ 
+{{ message }}
+<div id="task-content">
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="33" layout="column">
+        <md-card ng-repeat="task in tasks">
+            <img ng-src="img/badges/leaf.png" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{task.name}}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="start center">
+              <md-card-icon-actions>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                  <ng-md-icon icon="share"></ng-md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Share">
+                  <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+                </md-button>
+              </md-card-icon-actions>
+              <md-button>Join</md-button>
+            </md-card-actions>
+            <md-card-content>
+            <p>{{task.Country}} &middot; {{task.city}}</p>
+              <p>
+                {{task.description}}
+              </p>
+            </md-card-content>
+          </md-card>
+      </div>
+    </md-content>
+</div

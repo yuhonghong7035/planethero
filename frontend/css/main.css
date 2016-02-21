@@ -101,3 +101,11 @@ section h1 {
 /*.menucolors {
   color:#003B69 !important;
 }*/
+
+/* tasks */
+#task-content {
+    max-width:1178px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
