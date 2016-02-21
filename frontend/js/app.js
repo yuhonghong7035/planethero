@@ -6,69 +6,57 @@
 (function() {
   var app = angular.module('planethero', ["ngRoute", "ngMaterial", 'ngMdIcons', 'ngSanitize', "materialCalendar"]);
 
-  app.factory('Page', function() {
-        var title = '';
-        var header = '';
-        return {
-          title: function() { return title; },
-          setTitle: function(newTitle) { title = newTitle; },
-          header: function() { return header; },
-          setHeader: function(newHeader) { header = newHeader; },
-          makeActive: function(ele) {
-            $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
-            $("#"+ele).addClass("active");
-          }
-        };
-  });
-
-
   app.run(function($rootScope) {
-      $rootScope.removeactive = function() {
-          $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
+    $rootScope.url='http://private-6558c-planetheroapi.apiary-mock.com/';
+    $rootScope.headerstyle = 'background-color: #003B69';
+
+    $rootScope.removeactive = function() {
+        $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
+    }
+
+    $rootScope.countup = function(page){
+        $('.header_counts').each (function(){$(this).addClass('hidden');});
+        var options = {
+        useEasing : true,
+        useGrouping : true,
+        separator : ',',
+        decimal : '.',
+        prefix : '',
+        suffix : ''
+      };
+
+      var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
+      var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
+      var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
+      var badges_countup = new CountUp("badges_countup", 0, 2, 0, 0.5, options);
+      var upcomingactivities_countup = new CountUp("upcomingactivities_countup", 0, 2, 0, 0.5, options);
+      var useractivities_countup = new CountUp("useractivities_countup", 0, 5, 0, 0.5, options);
+
+      if (page == 'tasks' || page == 'feed' || page == 'metrics'){
+          $('.header_counts').eq(0).removeClass('hidden');
+          users_countup.start();
       }
-      $rootScope.url='http://private-6558c-planetheroapi.apiary-mock.com/';
-      $rootScope.headerstyle = 'background-color: #003B69';
-      $rootScope.countup = function(page){
-          $('.header_counts').each (function(){$(this).addClass('hidden');});
-          var options = {
-          useEasing : true,
-          useGrouping : true,
-          separator : ',',
-          decimal : '.',
-          prefix : '',
-          suffix : ''
-        };
-        var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
-        var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
-        var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
-        var badges_countup = new CountUp("badges_countup", 0, 2, 0, 0.5, options);
-        var upcomingactivities_countup = new CountUp("upcomingactivities_countup", 0, 2, 0, 0.5, options);
-        var useractivities_countup = new CountUp("useractivities_countup", 0, 5, 0, 0.5, options);
-        if (page == 'tasks' || page == 'feed' || page == 'metrics'){
-            $('.header_counts').eq(0).removeClass('hidden');
-            users_countup.start();
-        }
-        if (page == 'tasks' || page == 'feed' || page == 'metrics'){
-            $('.header_counts').eq(1).removeClass('hidden');
-            activities_countup.start();
-        }
-        if (page == 'tasks' || page == 'feed' || page == 'metrics'){
-            $('.header_counts').eq(2).removeClass('hidden');
-            countries_countup.start();
-        }
-        if (page == 'badges'){
-            $('.header_counts').eq(3).removeClass('hidden');
-            badges_countup.start();
-        }
-        if (page == 'calendar'){
-            $('.header_counts').eq(4).removeClass('hidden');
-            upcomingactivities_countup.start();
-        }
-        if (page == 'calendar'){
-            $('.header_counts').eq(5).removeClass('hidden');
-            useractivities_countup.start();
-        }
+      if (page == 'tasks' || page == 'feed' || page == 'metrics'){
+          $('.header_counts').eq(1).removeClass('hidden');
+          activities_countup.start();
       }
+      if (page == 'tasks' || page == 'feed' || page == 'metrics'){
+          $('.header_counts').eq(2).removeClass('hidden');
+          countries_countup.start();
+      }
+      if (page == 'badges'){
+          $('.header_counts').eq(3).removeClass('hidden');
+          badges_countup.start();
+      }
+      if (page == 'calendar'){
+          $('.header_counts').eq(4).removeClass('hidden');
+          upcomingactivities_countup.start();
+      }
+      if (page == 'calendar'){
+          $('.header_counts').eq(5).removeClass('hidden');
+          useractivities_countup.start();
+      }
+    }
   });
 
   //Define Routing for app
