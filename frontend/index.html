@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="planethero">
+<html lang="en" ng-app="planethero" ng-controller="indexController">
   <head>
-    <title ng-bind="'Planet Hero &dash; ' + title">myApp</title>
+    <title>Planet Hero - {{Page.title()}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -69,9 +69,9 @@
     <!--    Header area    -->
     <!--===================-->
 
-    <header id="feed-header">
-      <div class="header_container">
-        <h1>Everything, Everyone, Everywhere</h1>
+    <header id="header">
+      <div class="header_container" ng-style="myStyle">
+        <h1>{{ Page.header() }}</h1>
         <div class="header_counts"><h2 id="activities_countup"></h2> Activities</div>
         <div class="header_counts"><h2 id="users_countup"></h2> Users</div>
         <div class="header_counts">From <h2 id="countries_countup"></h2> countries around the world</div>

@@ -76,8 +76,13 @@ ol, ul {
   margin-top: 10px;
   }
 
+#header {
+  background: #003B69;
+}
+
 .header_container {
   padding:100px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .header_container h2 {

@@ -1,13 +1,19 @@
 //Define an angular module for our app
 var app = angular.module('planethero', ["ngRoute", "ngMaterial", 'ngMdIcons', 'ngSanitize', "materialCalendar"]);
 
-app.factory('utilityFun', function() {
-  return {
-    makeActive: function(ele) {
-      $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
-      $("#"+ele).addClass("active");
-    }
-  };
+app.factory('Page', function() {
+      var title = '';
+      var header = '';
+      return {
+        title: function() { return title; },
+        setTitle: function(newTitle) { title = newTitle; },
+        header: function() { return header; },
+        setHeader: function(newHeader) { header = newHeader; },
+        makeActive: function(ele) {
+          $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
+          $("#"+ele).addClass("active");
+        }
+      };
 });
 
 
@@ -16,6 +22,7 @@ app.run(function($rootScope) {
         $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
     }
     $rootScope.url='http://private-6558c-planetheroapi.apiary-mock.com/';
+    $rootScope.headerstyle = 'background-color: #003B69';
 });
 
 //Define Routing for app
@@ -57,14 +64,21 @@ app.config(['$routeProvider',
       });
 }]);
 
+app.controller('indexController', function($scope, Page) {
+    $scope.Page = Page;
+});
+
 app.controller('entranceController', function($scope, $rootScope) {
 });
 
-app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '$timeout', '$log', 'MaterialCalendarData', function($scope, $rootScope, $q, $filter,  $timeout, $log, MaterialCalendarData) {
+app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '$timeout', '$log', 'MaterialCalendarData', 'Page', function($scope, $rootScope, $q, $filter,  $timeout, $log, MaterialCalendarData, Page) {
     $rootScope.removeactive();
     $("#calendar").addClass ("active");
+    Page.setTitle('Calendar');
+    Page.setHeader('Calendar');
+    document.getElementById("header").style.backgroundColor = "#6D9A95";
     
-        $scope.selectedDate = null;
+    $scope.selectedDate = null;
     $scope.weekStartsOn = 0;
     $scope.dayFormat = "d";
     $scope.tooltips = true;
@@ -164,10 +178,10 @@ app.controller('profileController', function($scope, $rootScope) {
     $("#profile").addClass ("active");
 });
 
-app.controller('TasksController', function($scope,utilityFun, $rootScope, $http) {
+app.controller('TasksController', function($scope,Page, $rootScope, $http) {
     $rootScope.removeactive();
     $("#tasks").addClass ("active");
-    //utilityFun.makeActive("add");
+    //Page.makeActive("add");
     $scope.tasks = {};
     $http({
       method: 'GET',
@@ -181,11 +195,11 @@ app.controller('TasksController', function($scope,utilityFun, $rootScope, $http)
 
 });
 
-app.controller('ShowMetrics', function($scope,utilityFun, $rootScope) {
+app.controller('ShowMetrics', function($scope,Page, $rootScope) {
     $scope.message = 'This is Show ShowMetrics screen';
     $rootScope.removeactive();
     $("#metrics").addClass ("active");
-    //utilityFun.makeActive("metrics");
+    //Page.makeActive("metrics");
 
     $('#container').highcharts({
         chart: {
@@ -392,18 +406,21 @@ app.controller('ShowMetrics', function($scope,utilityFun, $rootScope) {
 
 });
 
-app.controller('FeedController', function($scope,utilityFun, $rootScope) {
+app.controller('FeedController', function($scope,Page, $rootScope) {
     $rootScope.removeactive();
     //$(".cd-stretchy-nav a").removeClass("active");
     $("#feed").addClass ("active");
-    //utilityFun.makeActive("feed");
+    //Page.makeActive("feed");
+    Page.setTitle('Activity Feed');
+    Page.setHeader('Everything, Everyone, Everywhere');
+    document.getElementById("header").style.backgroundColor = "#003B69";
 
 });
 
 app.controller('BadgesController', function($scope, $rootScope) {
     $rootScope.removeactive();
     $("#badges").addClass ("active");
-    //utilityFun.makeActive("badges");
+    //Page.makeActive("badges");
 
 
 });
