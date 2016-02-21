@@ -1,4 +1,5 @@
 //Define an angular module for our app
+
 var app = angular.module('planethero', ["ngRoute", "ngMaterial", 'ngMdIcons', 'ngSanitize', "materialCalendar"]);
 
 app.factory('Page', function() {
@@ -26,12 +27,12 @@ app.run(function($rootScope) {
     $rootScope.countup = function(page){
         $('.header_counts').each (function(){$(this).addClass('hidden');});
         var options = {
-    	  useEasing : true, 
-    	  useGrouping : true, 
-    	  separator : ',', 
-    	  decimal : '.', 
-    	  prefix : '', 
-    	  suffix : '' 
+    	  useEasing : true,
+    	  useGrouping : true,
+    	  separator : ',',
+    	  decimal : '.',
+    	  prefix : '',
+    	  suffix : ''
     	};
     	var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
     	var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
@@ -119,7 +120,7 @@ app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '
     Page.setHeader('Calendar');
     document.getElementById("header").style.backgroundColor = "#6D9A95";
     $rootScope.countup('calendar');
-    
+
     $scope.selectedDate = null;
     $scope.weekStartsOn = 0;
     $scope.dayFormat = "d";
@@ -202,11 +203,11 @@ app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '
         return data;
 
     };*/
-    
+
     //Set content of a particular date
     /*var today = new Date();
     MaterialCalendarData.setDayContent(today, '<span> :oD </span>');*/
-    
+
     $scope.tasks = [{"name":"Task A","date":"2016-02-01"}, {"name":"Task B","date":"2016-02-02"}];
     angular.forEach ($scope.tasks, function(value){
         //console.log ($scope.tasks[0].date);
