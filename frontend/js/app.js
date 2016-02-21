@@ -23,6 +23,47 @@ app.run(function($rootScope) {
     }
     $rootScope.url='http://private-6558c-planetheroapi.apiary-mock.com/';
     $rootScope.headerstyle = 'background-color: #003B69';
+    $rootScope.countup = function(page){
+        $('.header_counts').each (function(){$(this).addClass('hidden');});
+        var options = {
+    	  useEasing : true, 
+    	  useGrouping : true, 
+    	  separator : ',', 
+    	  decimal : '.', 
+    	  prefix : '', 
+    	  suffix : '' 
+    	};
+    	var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
+    	var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
+    	var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
+    	var badges_countup = new CountUp("badges_countup", 0, 2, 0, 0.5, options);
+    	var upcomingactivities_countup = new CountUp("upcomingactivities_countup", 0, 2, 0, 0.5, options);
+    	var useractivities_countup = new CountUp("useractivities_countup", 0, 5, 0, 0.5, options);
+    	if (page == 'tasks' || page == 'feed' || page == 'metrics'){
+    	    $('.header_counts').eq(0).removeClass('hidden');
+    	    users_countup.start();
+    	}
+    	if (page == 'tasks' || page == 'feed' || page == 'metrics'){
+    	    $('.header_counts').eq(1).removeClass('hidden');
+    	    activities_countup.start();
+    	}
+    	if (page == 'tasks' || page == 'feed' || page == 'metrics'){
+    	    $('.header_counts').eq(2).removeClass('hidden');
+    	    countries_countup.start();
+    	}
+    	if (page == 'badges'){
+    	    $('.header_counts').eq(3).removeClass('hidden');
+    	    badges_countup.start();
+    	}
+    	if (page == 'calendar'){
+    	    $('.header_counts').eq(4).removeClass('hidden');
+    	    upcomingactivities_countup.start();
+    	}
+    	if (page == 'calendar'){
+    	    $('.header_counts').eq(5).removeClass('hidden');
+    	    useractivities_countup.start();
+    	}
+    }
 });
 
 //Define Routing for app
@@ -77,6 +118,7 @@ app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '
     Page.setTitle('Calendar');
     Page.setHeader('Calendar');
     document.getElementById("header").style.backgroundColor = "#6D9A95";
+    $rootScope.countup('calendar');
     
     $scope.selectedDate = null;
     $scope.weekStartsOn = 0;
@@ -184,7 +226,8 @@ app.controller('TasksController', function($scope,Page, $rootScope, $http, Page)
     //Page.makeActive("add");
     Page.setTitle('Tasks');
     Page.setHeader('Everything, for the planet');
-    document.getElementById("header").style.backgroundColor = "rgb(103, 61, 61)";
+    document.getElementById("header").style.backgroundColor = "rgb(61, 103, 74)";
+    $rootScope.countup('tasks');
     $scope.tasks = {};
     $http({
       method: 'GET',
@@ -206,6 +249,7 @@ app.controller('ShowMetrics', function($scope,Page, $rootScope, Page) {
     Page.setTitle('Metrics');
     Page.setHeader('Numbers and Figures');
     document.getElementById("header").style.backgroundColor = "rgb(52, 150, 132)";
+    $rootScope.countup('metrics');
 
     $('#container').highcharts({
         chart: {
@@ -420,6 +464,7 @@ app.controller('FeedController', function($scope,Page, $rootScope, Page) {
     Page.setTitle('Activity Feed');
     Page.setHeader('Everything, Everyone, Everywhere');
     document.getElementById("header").style.backgroundColor = "#003B69";
+    $rootScope.countup('feed');
 
 });
 
@@ -430,6 +475,6 @@ app.controller('BadgesController', function($scope, $rootScope, Page) {
     Page.setTitle('Badges');
     Page.setHeader('Your Collection of Badges');
     document.getElementById("header").style.backgroundColor = "rgb(0, 105, 86)";
-
+    $rootScope.countup('badges');
 });
 

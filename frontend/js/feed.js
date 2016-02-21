@@ -30,18 +30,4 @@ jQuery(document).ready(function($){
 		});
 	}
 
-	var options = {
-	  useEasing : true, 
-	  useGrouping : true, 
-	  separator : ',', 
-	  decimal : '.', 
-	  prefix : '', 
-	  suffix : '' 
-	};
-	var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
-	var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
-	var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
-	users_countup.start();
-	activities_countup.start();
-	countries_countup.start();
 });
