@@ -68,7 +68,7 @@ app.controller('indexController', function($scope, Page) {
     $scope.Page = Page;
 });
 
-app.controller('entranceController', function($scope, $rootScope) {
+app.controller('entranceController', function($scope, $rootScope, Page) {
 });
 
 app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '$timeout', '$log', 'MaterialCalendarData', 'Page', function($scope, $rootScope, $q, $filter,  $timeout, $log, MaterialCalendarData, Page) {
@@ -173,15 +173,18 @@ app.controller('calendarController', ['$scope', '$rootScope', '$q', '$filter', '
     });
 }]);
 
-app.controller('profileController', function($scope, $rootScope) {
+app.controller('profileController', function($scope, $rootScope, Page) {
     $rootScope.removeactive();
     $("#profile").addClass ("active");
 });
 
-app.controller('TasksController', function($scope,Page, $rootScope, $http) {
+app.controller('TasksController', function($scope,Page, $rootScope, $http, Page) {
     $rootScope.removeactive();
     $("#tasks").addClass ("active");
     //Page.makeActive("add");
+    Page.setTitle('Tasks');
+    Page.setHeader('Everything, for the planet');
+    document.getElementById("header").style.backgroundColor = "rgb(103, 61, 61)";
     $scope.tasks = {};
     $http({
       method: 'GET',
@@ -195,11 +198,14 @@ app.controller('TasksController', function($scope,Page, $rootScope, $http) {
 
 });
 
-app.controller('ShowMetrics', function($scope,Page, $rootScope) {
+app.controller('ShowMetrics', function($scope,Page, $rootScope, Page) {
     $scope.message = 'This is Show ShowMetrics screen';
     $rootScope.removeactive();
     $("#metrics").addClass ("active");
     //Page.makeActive("metrics");
+    Page.setTitle('Metrics');
+    Page.setHeader('Numbers and Figures');
+    document.getElementById("header").style.backgroundColor = "rgb(52, 150, 132)";
 
     $('#container').highcharts({
         chart: {
@@ -406,7 +412,7 @@ app.controller('ShowMetrics', function($scope,Page, $rootScope) {
 
 });
 
-app.controller('FeedController', function($scope,Page, $rootScope) {
+app.controller('FeedController', function($scope,Page, $rootScope, Page) {
     $rootScope.removeactive();
     //$(".cd-stretchy-nav a").removeClass("active");
     $("#feed").addClass ("active");
@@ -417,11 +423,13 @@ app.controller('FeedController', function($scope,Page, $rootScope) {
 
 });
 
-app.controller('BadgesController', function($scope, $rootScope) {
+app.controller('BadgesController', function($scope, $rootScope, Page) {
     $rootScope.removeactive();
     $("#badges").addClass ("active");
     //Page.makeActive("badges");
-
+    Page.setTitle('Badges');
+    Page.setHeader('Your Collection of Badges');
+    document.getElementById("header").style.backgroundColor = "rgb(0, 105, 86)";
 
 });
 
