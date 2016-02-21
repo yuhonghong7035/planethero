@@ -28,7 +28,8 @@
               <md-button>Join</md-button>
             </md-card-actions>
             <md-card-content>
-            <p>{{task.Country}} &middot; {{task.city}}</p>
+            <p class="task-info">{{task.Country}} &middot; {{task.city}}</p>
+            <p class="task-info">From {{task.date_start | date:'yyyy-MM-dd HH:mm:ss Z'}}<br>To {{task.date_end | date:'yyyy-MM-dd HH:mm:ssZ'}}</p>
               <p>
                 {{task.description}}
               </p>
