@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Knock::Engine => "/knock"
   resources :teams, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :items, except: [:new, :edit]
