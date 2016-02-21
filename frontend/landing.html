@@ -1,66 +1,75 @@
 <!doctype html>
 <html lang="en" class="no-js" ng-app="planethero">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planet Hero</title>
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- 3rd Party StyleSheets -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/landing.css"> 
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<script type="text/javascript" src="js/countUp.js"></script>
+    <!-- Original StyleSheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/landing.css">
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/controller.js"></script>
-  	
-	<title>Planet Hero</title>
-</head>
+    <!-- 3rd Party JavaScripts -->
+    <script src="js/3rdparty_modules/modernizr.js"></script>
+    <script src="node_modules/countup/dist/countUp.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
 
-<script>
-$(window).load(function(){
-	$('.preload_bg').delay(2000).fadeOut();
-	}
-)
-</script>
-<div class="preload_bg"><div id="loading_logo" style="margin-left: 50%; margin-right: 50%; left: -55px; position: fixed; margin-top: 180px;"></div><div class="loading_ani"></div></div>
+    <!-- Controller JavaScripts -->
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/feed.js"></script>
+    <script src="js/nav.js"></script>
 
-<body ng-controller="feedCtrl" align="center">
-	<div class="overlay"></div>
-	<header id="landing_header">
-			<h1>Planet Hero</h1>
-			<h2>Everything, Everyone, Everywhere, All About Our Planet</h2>
-			<div id="landing_header_info">
-				<div class="header_counts"><h2 id="activities_countup"></h2> Initiatives</div>
-				<div class="header_counts"><h2 id="users_countup"></h2> People</div>
-				<div class="header_counts"><h2 id="countries_countup"></h2> Countries</div>
-			</div>
-			<a href="#0" class="become-btn">Become A Planet Hero</a>
-	</header>
+    <!-- Inline JavaScript -->
+    <script>
+      $(window).load(function(){
+        $('.preload_bg').delay(2000).fadeOut();
+      });
+    </script>
+  </head>
 
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/feed.js"></script> <!-- Resource jQuery -->
-<script src="js/nav.js"></script> <!-- Resource jQuery -->
-<script type="text/javascript">
-var options = {
-  useEasing : true, 
-  useGrouping : true, 
-  separator : ',', 
-  decimal : '.', 
-  prefix : '', 
-  suffix : '' 
-};
-var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
-var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
-var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
-users_countup.start();
-activities_countup.start();
-countries_countup.start();
-</script>
-</body>
+  <body ng-controller="feedCtrl" align="center">
+    <div class="preload_bg">
+      <div id="loading_logo" style="margin-left: 50%; margin-right: 50%; left: -55px; position: fixed; margin-top: 180px;">
+      </div>
+      <div class="loading_ani"></div>
+    </div>
+
+    <div class="overlay">
+    </div>
+
+    <header id="landing_header">
+        <h1>Planet Hero</h1>
+        <h2>Everything, Everyone, Everywhere, All About Our Planet</h2>
+        <div id="landing_header_info">
+          <div class="header_counts"><h2 id="activities_countup"></h2> Initiatives</div>
+          <div class="header_counts"><h2 id="users_countup"></h2> People</div>
+          <div class="header_counts"><h2 id="countries_countup"></h2> Countries</div>
+        </div>
+        <a href="#0" class="become-btn">Become A Planet Hero</a>
+    </header>
+
+    <script type="text/javascript">
+      var options = {
+        useEasing : true,
+        useGrouping : true,
+        separator : ',',
+        decimal : '.',
+        prefix : '',
+        suffix : ''
+      };
+      var users_countup = new CountUp("users_countup", 0, 1200, 0, 1, options);
+      var activities_countup = new CountUp("activities_countup", 0, 2000, 0, 1, options);
+      var countries_countup = new CountUp("countries_countup", 0, 48, 0, 1, options);
+      users_countup.start();
+      activities_countup.start();
+      countries_countup.start();
+    </script>
+  </body>
 </html>

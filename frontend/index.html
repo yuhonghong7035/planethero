@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- 3rd Party StyleSheets -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
 
+    <!-- Original StyleSheets -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/feed.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -83,22 +85,26 @@
     <!--=======================-->
     <!--    Script loadings    -->
     <!--=======================-->
-    <script src="js/modernizr.js"></script>
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/angular.min.js"></script>
-    <!-- <script src="js/highcharts.js"></script> -->
-    <!-- <script src="js/drilldown.js"></script>  -->
-    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
-    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
-    <script type="text/javascript" src="js/countUp.js"></script>
-    <script type="text/javascript" src="js/global.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script src="js/modernizr.custom.js"></script>
+    <script src="js/3rdparty_modules/modernizr.js"></script>
+    <script src="js/3rdparty_modules/modernizr.custom.js"></script>
 
-    <!-- <script type="text/javascript" src="js/controller.js"></script> -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+
+    <script src="node_modules/highcharts-release/highmaps.js"></script>
+    <script src="node_modules/highcharts-release/modules/data.js"></script>
+    <script src="node_modules/highcharts-release/modules/drilldown.js"></script>
+
+    <script src="node_modules/countup/dist/countUp.min.js"></script>
+
+    <!-- Original JavaScript -->
+    <script src="js/global.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+
+    <!-- US map for highcharts -->
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
   </body>
 </html>
 
