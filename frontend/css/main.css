@@ -104,7 +104,7 @@ section h1 {
 }*/
 
 /* tasks */
-#task-content {
+#task-content, #calendar-content {
     max-width:1178px;
     margin-left: auto;
     margin-right: auto;

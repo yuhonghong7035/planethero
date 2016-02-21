@@ -18,9 +18,12 @@ Stretchy Nav style - common to:
 -------------------------------- */
 .cd-stretchy-nav {
   position: fixed;
-  z-index: 100;
+  z-index: 2;
   top: 40px;
   right: 5%;
+}
+.cd-stretchy-nav.nav-is-visible{
+    z-index:100;
 }
 .cd-stretchy-nav .stretchy-nav-bg {
   /* this is the stretching navigation background */
