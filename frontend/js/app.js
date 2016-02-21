@@ -1,14 +1,14 @@
 //Define an angular module for our app
-var app = angular.module('planethero', []);
+var app = angular.module('planethero', ["ngRoute"]);
 
 app.factory('utilityFun', function() {
-        return {
-            makeActive: function(ele) {
-                $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
-                $("#"+ele).addClass("active");
-            }
-        };
-    });
+  return {
+    makeActive: function(ele) {
+      $('.cd-stretchy-nav ul li a').each (function(){$(this).removeClass('active');});
+      $("#"+ele).addClass("active");
+    }
+  };
+});
 
 
 app.run(function($rootScope) {
