@@ -1,6 +1,6 @@
 (function() {
   var addTaskController = function($scope, $rootScope, $http, Page) {
-
+    $scope.fields = {}
   };
 
   angular
