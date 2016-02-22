@@ -1,0 +1,7 @@
+calendar-md md-content > md-content.calendar > :not(:first-child) > * {
+  min-height: 80px;
+}
+
+#calendar-content calendar-md md-content {
+  z-index: 1;
+}
