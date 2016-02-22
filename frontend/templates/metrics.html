@@ -1,10 +1,23 @@
-<div class="graphscont">
+<div id="task-content"  class="graphscont">
 	<section>
-	<h1 class="">Graph 1</h1>
-	<div id="container" style="width: 50%; height: 400px; margin: 0 auto; padding: 10px;"></div>
+	<h1 class="">Planet Heroes</h1>
+	<div id="activities_container" style="width: 50%; height: 400px; margin: 0 auto; padding: 10px;"></div>
+		<div id="users_container" style="width: 50%; height: 400px; margin: 0 auto; padding: 10px;"></div>
+
 	</section>
 	<!-- <section>
 	<h1>Graph 2</h1>
 	<div id="container1" style="width: 50%; height: 400px; margin: 0 auto; padding: 10px;"></div>
 	</section> -->
+	<md-content class="md-padding" align="center">
+	<md-button class="md-raised md-primary" ng-click="popgraphs('air')">CO2 Emission</md-button>
+	<md-button class="md-raised md-primary" ng-click="popgraphs('pm')">PM2.5 air pollution</md-button>
+	<md-button class="md-raised md-primary" ng-click="popgraphs('elec')">Electric power consumption</md-button>
+	<md-button class="md-raised md-primary" ng-click="popgraphs('energy')">Energy use</md-button>
+	<section>
+	<h1 class="">Your location: {{usercountry}}</h1>
+	<p>If it is not shown correctly, please ensure that you have enabled Planet Hero to get your location</p>
+	</section>
+    <div id="graph_area" align="center"></div>	
+    </md-content>
 </div>
