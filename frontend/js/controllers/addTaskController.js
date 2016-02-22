@@ -1,5 +1,5 @@
 (function() {
-  var addTaskController = function($scope, $rootScope) {
+  var addTaskController = function($scope, $rootScope, $http) {
 
   };
 

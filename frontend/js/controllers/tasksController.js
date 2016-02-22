@@ -7,6 +7,7 @@
       Page.setHeader('Everything, for the planet');
       document.getElementById("header").style.backgroundColor = "rgb(61, 103, 74)";
       $rootScope.countup('tasks');
+
       $scope.tasks = {};
       $http({
         method: 'GET',
