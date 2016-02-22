@@ -1,4 +1,4 @@
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -104,22 +104,4 @@ ol, ul {
 
 section h1 {
   text-align: center;
-}
-
-/* end of metrics */
-
-/*.menucolors {
-  color:#003B69 !important;
-}*/
-
-/* tasks */
-#task-content, #calendar-content {
-    max-width:1178px;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
-.task-info {
-    font-size: 15px;
 }

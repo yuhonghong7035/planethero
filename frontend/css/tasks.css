@@ -1,0 +1,16 @@
+/* tasks */
+
+#task-content, #calendar-content {
+  max-width:1178px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#task-content a.md-button {
+  z-index: 10;
+}
+
+.task-info {
+  font-size: 15px;
+}

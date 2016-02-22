@@ -3,9 +3,10 @@
 <div id="task-content">
   <md-content class="md-padding">
     <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
-      <md-button class="md-raised md-primary" ng-disabled="false" href="/tasks/add">Create A Task</md-button>
+      <md-button class="md-raised md-primary" ng-href="#/tasks/new">Create A Task</md-button>
     </section>
   </md-content>
+
   <md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xs flex-gt-xs="33" layout="column">
       <md-card ng-repeat="task in tasks">
