@@ -94,7 +94,7 @@
       /*var today = new Date();
       MaterialCalendarData.setDayContent(today, '<span> :oD </span>');*/
 
-      $scope.tasks = [{"name":"Task A","date":"2016-02-01"}, {"name":"Task B","date":"2016-02-02"}];
+      $scope.tasks = [{"name":"Plant Trees","date":"2016-02-01"}, {"name":"Cleanup River","date":"2016-02-02"}];
       angular.forEach ($scope.tasks, function(value){
           //console.log ($scope.tasks[0].date);
           var date = new Date(value.date);
