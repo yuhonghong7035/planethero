@@ -339,6 +339,10 @@
                   y: 4,
                   drilldown: 'uk'
               }, {
+                  name: 'Hong Kong',
+                  y: 4,
+                  drilldown: 'hk'
+              },{
                   name: 'Austrialia',
                   y: 2,
                   drilldown: 'au'
@@ -353,12 +357,17 @@
                       ['Chicago', 1]
                   ]
               }, {
+                  id: 'hk',
+                  data: [
+                      ['Hong Kong', 4]
+                  ]
+              },{
                   id: 'uk',
                   data: [
                       ['Bath', 4],
                       ['Birmingham', 2]
                   ]
-              }, {
+              },  {
                   id: 'au',
                   data: [
                       ['Sydney', 4],
@@ -401,6 +410,10 @@
                   y: 50,
                   drilldown: 'us'
               }, {
+                  name: 'Hong Kong',
+                  y: 46,
+                  drilldown: 'hk'
+              },{
                   name: 'UK',
                   y: 44,
                   drilldown: 'uk'
@@ -419,6 +432,11 @@
                       ['Chicago', 11]
                   ]
               }, {
+                  id: 'hk',
+                  data: [
+                      ['Hong Kong', 46]
+                  ]
+              },{
                   id: 'uk',
                   data: [
                       ['Bath', 14],
