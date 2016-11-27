@@ -9,3 +9,5 @@ Features include:
 - Environmental data (Air, PM, Electricity and Energy data from World Bank)
 - Regional rankings
 - Timeline and feed
+
+A hackathon project hack.summit() 2016 virtual hackathon, top 100 finalists :)
